@@ -5,13 +5,18 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
-    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
-    <db:generic-config name="Generic_Database_Configuration" url="jdbc:derby://localhost:1527/DemoDb" driverClassName="org.apache.derby.jdbc.ClientDriver" doc:name="Generic Database Configuration"/>
-    <flow name="munitdbmockingFlow">
+ <flow name="munitdbmockingFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/employees" doc:name="HTTP"/>
-        <db:select config-ref="Generic_Database_Configuration" doc:name="QueryDerby">
-            <db:parameterized-query><![CDATA[Select * from employees]]></db:parameterized-query>
+        <set-variable variableName="executionTimeStamp" value="#[(new Date()).toString()]" doc:name="Variable"/>
+        <logger message="executionTimeStamp : #[flowVars.executionTimeStamp]" level="INFO" doc:name="Logger"/>
+        <db:insert config-ref="Generic_Database_Configuration" doc:name="Log to CALL_LOG table">
+            <db:dynamic-query><![CDATA[INSERT INTO CALL_LOG (LOG_STRING) values ('executionTimeStamp: #[flowVars.executionTimeStamp]' )]]></db:dynamic-query>
+        </db:insert>
+        <logger message="Payload After Log to LOG_STRING table : #[payload]" level="INFO" doc:name="Logger"/>
+        <db:select config-ref="Generic_Database_Configuration" doc:name="Get Employees">
+            <db:dynamic-query><![CDATA[select * from employees]]></db:dynamic-query>
         </db:select>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <logger message="Payload Get Employees: #[payload]" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>
