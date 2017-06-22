@@ -1,0 +1,64 @@
+<metadata__cache__entry>
+  <version>5.2.0.0</version>
+  <connectorName>Derby_Configuration</connectorName>
+  <metadataIo class="tree-map">
+    <entry>
+      <string>http://www.mulesoft.org/schema/mule/db/select</string>
+      <map>
+        <entry>
+          <string>select * from Employees;</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultListMetaDataModel">
+                <dataType>LIST</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+                <model class="org.mule.common.metadata.DefaultDefinedMapMetaDataModel">
+                  <dataType>MAP</dataType>
+                  <metaDataModelPropertiesManager>
+                    <properties/>
+                  </metaDataModelPropertiesManager>
+                  <fields/>
+                </model>
+                <isArray>false</isArray>
+              </payload>
+              <properties>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields/>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields/>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields/>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields/>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields/>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+      </map>
+    </entry>
+  </metadataIo>
+</metadata__cache__entry>

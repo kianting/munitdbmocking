@@ -10,5 +10,8 @@
 	<classpathentry kind="src" path="src/main/api"/>
 	<classpathentry kind="src" path="src/main/wsdl"/>
 	<classpathentry kind="src" path="src/test/munit"/>
+	<classpathentry kind="lib" path="derby.jar"/>
+	<classpathentry kind="lib" path="derbyclient.jar"/>
+	<classpathentry kind="lib" path="derbytools.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
